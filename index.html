@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>오늘의 위로 가사</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background: #fff6f9;
+      padding: 50px;
+      color: #333;
+    }
+    .box {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 30px;
+      max-width: 500px;
+      margin: auto;
+    }
+    .lyric {
+      font-size: 1.3em;
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+    .credit {
+      font-size: 0.9em;
+      color: #888;
+    }
+    .btn {
+      margin-top: 20px;
+      background: #ffd5e5;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #ffbad4;
+    }
+  </style>
+</head>
+<body>
+
+<div class="box">
+  <div class="lyric" id="lyricBox">💫 가사를 뽑는 중...</div>
+  <button class="btn" onclick="generateLyric()">다시 뽑기</button>
+  <div class="credit">오늘의 위로 • by NCT WISH 🎧</div>
+</div>
+
+<script>
+  const lyrics = [
+    "넌 아름다워 푸르디 푸른 눈빛 – Sail Away",
+    "그 끝은 아니야, 다시 시작되는 거야 – Wish",
+    "달빛 속에 잠긴 너의 그림자 – Moonlight",
+    "울어도 돼, 너만의 리듬으로 – Songbird",
+    "끝없는 우주 속에 날아가도 난 너라는 별을 찾아갈 거야 – NASA"
+  ];
+
+  function generateLyric() {
+    const random = lyrics[Math.floor(Math.random() * lyrics.length)];
+    document.getElementById("lyricBox").textContent = `“${random}”`;
+  }
+
+  // 처음 로딩 시 실행
+  generateLyric();
+</script>
+
+</body>
+</html>
